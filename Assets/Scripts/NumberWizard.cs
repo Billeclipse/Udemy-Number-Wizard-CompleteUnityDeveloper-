@@ -3,7 +3,7 @@ using System.Collections;
 
 public class NumberWizard : MonoBehaviour {
 	
-	int max ,min, guess;
+	int max, min ,guess;
 
 	// Use this for initialization
 	void Start () {
@@ -21,7 +21,8 @@ public class NumberWizard : MonoBehaviour {
 			NextGuess();
 		}
 		else if (Input.GetKeyDown(KeyCode.Return)){
-			print("I won!");
+			Debug.Log("I won!");
+			StartGame();
 		}
 	}
 	
@@ -30,22 +31,22 @@ public class NumberWizard : MonoBehaviour {
 		min = 1;
 		guess= 500;
 		
-		print ("========================");
-		print ("Welcome to Number Wizard");
-		print ("Pick a number in your head but don't tell me!");
+		Debug.Log ("========================");
+		Debug.Log ("Welcome to Number Wizard");
+		Debug.Log ("Pick a number in your head but don't tell me...");
 		
-		print ("The hightest number you can pick is "+ max);
-		print ("The lowest number you can pick is "+ min);
+		Debug.Log ("The hightest number you can pick is "+ max);
+		Debug.Log ("The lowest number you can pick is "+ min);
 		
-		print ("Is the number higher or lower than "+ guess +"?");
-		print ("Up = highter, Down = lower, Return = equal");
+		Debug.Log ("Is the number higher or lower than "+ guess +"?");
+		Debug.Log ("Up = highter, Down = lower, Return = equal");
 		
 		max++;	
 	}
 	
 	void NextGuess(){
 		guess = (max + min) / 2;
-		print ("Higher or lower than " + guess);
-		print ("Up = highter, Down = lower, Return = equal");	
+		Debug.Log ("Higher or lower than " + guess);
+		Debug.Log ("Up = highter, Down = lower, Return = equal");	
 	}
 }
